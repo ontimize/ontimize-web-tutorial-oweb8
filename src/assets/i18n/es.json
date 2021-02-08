@@ -20,5 +20,13 @@
   "SURNAME": "Apellido",
   "STARTDATE": "Fecha inicio",
   "EMAIL": "Correo",
-  "PHOTO": "Fotografía"
+  "PHOTO": "Fotografía",
+  "CUSTOMER_PERSONAL_INFORMATION": "Información personal",
+  "CUSTOMERID": "Id. cliente",
+  "PHONE": "Teléfono",
+  "CUSTOMERTYPEID": "Tipo cliente",
+  "ADDRESS": "Dirección",
+  "LONGITUDE": "Longitud",
+  "LATITUDE": "Latitud",
+  "COMMENTS": "Comentarios"
 }
