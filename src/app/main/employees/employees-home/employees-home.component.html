@@ -1,0 +1,14 @@
+<o-form-layout-manager title="{{'EMPLOYEES' | oTranslate }}" separator=" " mode="dialog" label-columns="EMPLOYEENAME;EMPLOYEESURNAME">
+  <div fxFlex>
+   <o-table fxFlex attr="employeesTable" service="employees" entity="employee" keys="EMPLOYEEID"
+     columns="EMPLOYEEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEPHOTO;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;EMPLOYEETYPEID"
+     visible-columns="EMPLOYEEPHOTO;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEEMAIL;EMPLOYEEADDRESS;EMPLOYEESTARTDATE"
+     query-rows="15">
+     <o-table-column attr="EMPLOYEEPHOTO" title="EMPLOYEEPHOTO" orderable="no" searchable="no" type="image" avatar="no" empty-image="assets/images/no-image.png"
+       image-type="base64" width="150px"></o-table-column>
+     <o-table-column attr="EMPLOYEESTARTDATE" title="EMPLOYEESTARTDATE" type="date" format="LL"></o-table-column>
+     <o-table-column attr="EMPLOYEENAME" title="EMPLOYEENAME" width="150px"></o-table-column>
+     <o-table-column attr="EMPLOYEESURNAME" title="EMPLOYEESURNAME" width="150px"></o-table-column>
+   </o-table>
+  </div>
+ </o-form-layout-manager>

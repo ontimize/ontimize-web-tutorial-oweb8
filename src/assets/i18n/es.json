@@ -28,5 +28,18 @@
   "ADDRESS": "Dirección",
   "LONGITUDE": "Longitud",
   "LATITUDE": "Latitud",
-  "COMMENTS": "Comentarios"
+  "COMMENTS": "Comentarios",
+  "EMPLOYEES": "Empleados",
+  "EMPLOYEEID": "Id. Empleado",
+  "EMPLOYEETYPEID": "Tipo de empleado",
+  "EMPLOYEENAME": "Nombre",
+  "EMPLOYEESURNAME": "Apellidos",
+  "EMPLOYEEADDRESS": "Dirección",
+  "EMPLOYEECOMMENTS": "Comentarios",
+  "EMPLOYEESTARTDATE": "Fecha de inicio",
+  "EMPLOYEEPHOTO": "Fotografía",
+  "EMPLOYEEEMAIL": "Correo",
+  "OFFICEID": "Oficina",
+  "EMPLOYEEPHONE": "Teléfono",
+  "EMPLOYEE_PERSONAL_INFORMATION": "Detalles empleado"
 }
