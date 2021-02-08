@@ -1,5 +1,5 @@
 {
-  "APP_TITLE": "JEE seed",
+  "APP_TITLE": "Bank Manager",
   "VERSION": "Versión",
   "EXAMPLE_LOGIN_INFO": "Usuario y contraseña de ejemplo",
   "USERNAME": "Usuario",
@@ -13,5 +13,12 @@
   "ERROR_SESSION_EXPIRED": "La sesión ha caducado",
   "ERROR_USER_REQUIRED": "Nombre de usuario incorrecto.",
   "ERROR_PASS_REQUIRED": "Contraseña incorrecta.",
-  "ERROR_USER_PASS_INCORRECT": "Usuario o contraseña incorrecta."
+  "ERROR_USER_PASS_INCORRECT": "Usuario o contraseña incorrecta.",
+  "CUSTOMERS": "Clientes",
+  "ID": "Id.",
+  "NAME": "Nombre",
+  "SURNAME": "Apellido",
+  "STARTDATE": "Fecha inicio",
+  "EMAIL": "Correo",
+  "PHOTO": "Fotografía"
 }
