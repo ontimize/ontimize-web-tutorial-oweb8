@@ -1,14 +1,14 @@
 {
-  "name": "ontimize-web-ngx-jee-seed",
+  "name": "bankmanager-web",
   "version": "8.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4299",
+    "start": "ng serve --port 4200 -o --host localhost",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "production": "ng build --prod=true --baseHref=/ontimize-web-ngx-jee-seed/"
+    "production": "ng build --prod=true --baseHref=/bankmanager-web/"
   },
   "private": true,
   "engines": {
