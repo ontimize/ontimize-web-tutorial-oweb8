@@ -54,5 +54,9 @@
   "INTERESRATE_MONTHLY": "Monthly interest rate",
   "BRANCH_INFORMATION":"Branch information",
   "CUSTOMERS_INFORMATION":"Branch customers information",
-  "BALANCE":"Balance"
+  "BALANCE":"Balance",
+  "DATE_": "Date",
+  "CONCEPT": "Concept",
+  "MOVEMENT": "Movement",
+  "MOVEMENTTYPEID": "Movement type"
 }

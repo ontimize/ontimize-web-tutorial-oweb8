@@ -1,0 +1,35 @@
+<o-form editable-detail="false" service="branches" entity="accountBalance" keys="ACCOUNTID" columns="ACCOUNTID;ACCOUNTNUMBER"
+  show-header="yes" header-actions="R;D" show-header-navigation="yes" keys-sql-types="INTEGER">
+  <o-row>
+    <o-text-input class="input-padding" attr="ACCOUNTNUMBER" sql-type="STRING" fxFlex="40"></o-text-input>
+    <o-combo attr="OFFICEID" fxFlex="50" service="branches" entity="branch" keys="OFFICEID" columns="OFFICEID;NAME"
+      visible-columns="NAME" value-column="OFFICEID" class="input-padding"></o-combo>
+    <o-currency-input attr="BALANCE" fxFlex="20" currency-symbol="EUR" max-decimal-digits="2"></o-currency-input>
+  </o-row>
+  <o-row>
+    <o-date-input attr="ENDDATE" class="input-padding" fxFlex="20"></o-date-input>
+    <o-percent-input attr="INTERESRATE" class="input-padding" fxFlex="20"></o-percent-input>
+    <o-text-input  attr="ACCOUNTTYP" sql-type="STRING" fxFlex="60"></o-text-input>
+  </o-row>
+  <o-row>
+    <o-table fxFlex="40" class="input-padding" attr="customersTable" service="customers" entity="vCustomerAccount"
+      parent-keys="ACCOUNTID" keys="ACCOUNTID" columns="ID;NAME;SURNAME" visible-columns="ID;NAME;SURNAME" query-rows="15"
+      insert-button="yes" insert-form-route="addcustomer/new" detail-mode="none">
+      <o-table-column attr="ID" title="ID" class="o-table-column-centered"></o-table-column>
+      <o-table-column attr="NAME" title="NAME" class="o-table-column-centered"></o-table-column>
+      <o-table-column attr="SURNAME" title="SURNAME" class="o-table-column-centered"></o-table-column>
+    </o-table>
+    <o-table fxFlex="60" attr="movementsTable" service="movements" entity="movement" parent-keys="ACCOUNTID" keys="MOVEMENTID"
+      columns="DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPEID" visible-columns="DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPEID" query-rows="15"
+      insert-form-route="addMovement/new"  detail-mode="none" insert-button="yes">
+      <o-table-column attr="DATE_" title="DATE_" type="date" format="LL"></o-table-column>
+      <o-table-column attr="MOVEMENT" title="MOVEMENT" type="currency" currency-symbol="€" currency-symbol-position="right"
+        thousand-separator="." decimal-separator="," class="o-table-column-centered"></o-table-column>
+      <o-table-column attr="MOVEMENTTYPEID" title="MOVEMENTTYPEID">
+        <o-table-cell-renderer-service service="movements" entity="movementType" columns="DESCRIPTION;MOVEMENTTYPEID"
+           value-column="DESCRIPTION">
+        </o-table-cell-renderer-service>
+      </o-table-column>
+    </o-table>
+  </o-row>
+</o-form>

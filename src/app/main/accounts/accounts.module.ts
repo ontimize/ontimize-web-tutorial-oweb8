@@ -4,6 +4,10 @@ import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { AccountsRoutingModule } from './accounts-routing.module';
 import { AccountsHomeComponent } from './accounts-home/accounts-home.component';
 import { SharedModule } from '../../shared/shared.module';
+import { AccountsDetailComponent } from './accounts-detail/accounts-detail.component';
+import { AccountsNewComponent } from './accounts-new/accounts-new.component';
+import { AddCustomerComponent } from './add-customer/add-customer.component';
+import { AddMovementComponent } from './add-movement/add-movement.component';
 
 @NgModule({
   imports: [
@@ -13,7 +17,11 @@ import { SharedModule } from '../../shared/shared.module';
     AccountsRoutingModule
   ],
   declarations: [
-    AccountsHomeComponent
+    AccountsHomeComponent,
+    AccountsDetailComponent,
+    AccountsNewComponent,
+    AddCustomerComponent,
+    AddMovementComponent
   ]
 })
 export class AccountsModule { }

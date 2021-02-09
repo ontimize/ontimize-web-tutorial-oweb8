@@ -1,0 +1,12 @@
+<o-form service="branches" entity="account" keys="ACCOUNTID" columns="ACCOUNTID" show-header="yes" keys-sql-types="INTEGER">
+  <o-row>
+    <o-combo attr="OFFICEID" fxFlex="80" service="branches" entity="branch" keys="OFFICEID" columns="OFFICEID;NAME" visible-columns="NAME"
+      value-column="OFFICEID" class="input-padding" required="yes"></o-combo>
+      <o-date-input attr="STARTDATE" fxFlex="20" required="yes"></o-date-input>
+  </o-row>
+  <o-row>
+      <o-date-input attr="ENDDATE" class="input-padding" fxFlex="20"></o-date-input>
+      <o-percent-input attr="INTERESRATE" class="input-padding" fxFlex="20"></o-percent-input>
+      <o-text-input  attr="ACCOUNTTYP" sql-type="STRING" fxFlex="60"></o-text-input>
+    </o-row>
+</o-form>
