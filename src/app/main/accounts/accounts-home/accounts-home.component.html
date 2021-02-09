@@ -2,15 +2,16 @@
   <div fxFlex>
    <o-table fxFlex attr="accountsTable" service="branches" entity="account" keys="ACCOUNTID"
      columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
-     visible-columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
-     query-rows="20">
-     <o-table-column attr="ACCOUNTID" title="ACCOUNTID" width="120px"></o-table-column>
+     visible-columns="ACCOUNTNUMBER;STARTDATE;ENDDATE;INTERESRATE;INTERESRATE_MONTHLY;ACCOUNTTYP" query-rows="20">
      <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
      <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
      <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" width="150px" decimal-separator=","></o-table-column>
-     <o-table-column attr="ENTITYID" title="ENTITYID" width="120px"></o-table-column>
-     <o-table-column attr="OFFICEID" title="OFFICEID" width="120px"></o-table-column>
-     <o-table-column attr="CDID" title="CDID" width="75px"></o-table-column>
+     <o-table-column attr="ACCOUNTNUMBER" title="ACCOUNTNUMBER" class="o-table-column-centered">
+       <app-account-number-render></app-account-number-render>
+     </o-table-column>
+     <o-table-column-calculated attr="INTERESRATE_MONTHLY" title="INTERESRATE_MONTHLY" [operation-function]="intRateMonthly" type="percentage"
+       decimal-separator="," class="o-table-column-centered">
+     </o-table-column-calculated>
    </o-table>
   </div>
  </o-form-layout-manager>
