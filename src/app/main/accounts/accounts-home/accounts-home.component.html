@@ -1,0 +1,16 @@
+<o-form-layout-manager title="{{'ACCOUNTS' | oTranslate }}" separator=" " mode="dialog" label-columns="ANID">
+  <div fxFlex>
+   <o-table fxFlex attr="accountsTable" service="branches" entity="account" keys="ACCOUNTID"
+     columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
+     visible-columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
+     query-rows="20">
+     <o-table-column attr="ACCOUNTID" title="ACCOUNTID" width="120px"></o-table-column>
+     <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+     <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
+     <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" width="150px" decimal-separator=","></o-table-column>
+     <o-table-column attr="ENTITYID" title="ENTITYID" width="120px"></o-table-column>
+     <o-table-column attr="OFFICEID" title="OFFICEID" width="120px"></o-table-column>
+     <o-table-column attr="CDID" title="CDID" width="75px"></o-table-column>
+   </o-table>
+  </div>
+ </o-form-layout-manager>

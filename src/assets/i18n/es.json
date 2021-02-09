@@ -41,5 +41,14 @@
   "EMPLOYEEEMAIL": "Correo",
   "OFFICEID": "Oficina",
   "EMPLOYEEPHONE": "Teléfono",
-  "EMPLOYEE_PERSONAL_INFORMATION": "Detalles empleado"
+  "EMPLOYEE_PERSONAL_INFORMATION": "Detalles empleado",
+  "BRANCHES": "Sucursales",
+  "ACCOUNTS": "Cuentas",
+  "ACCOUNTID": "Id.",
+  "ENTITYID": "Entidad",
+  "CDID": "DC",
+  "ANID": "Cuenta",
+  "ENDDATE": "Fecha fin",
+  "INTERESRATE": "% interés",
+  "ACCOUNTTYP": "Tipo de cuenta"
 }

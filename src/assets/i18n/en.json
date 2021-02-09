@@ -41,5 +41,13 @@
   "EMPLOYEEEMAIL": "Mail",
   "OFFICEID": "Office",
   "EMPLOYEEPHONE": "Phone",
-  "EMPLOYEE_PERSONAL_INFORMATION": "Employee details"
+  "EMPLOYEE_PERSONAL_INFORMATION": "Employee details",
+  "BRANCHES": "Branches",
+  "ACCOUNTS": "Accounts",
+  "ENTITYID": "Entity",
+  "CDID": "CD",
+  "ANID": "Account",
+  "ENDDATE": "End date",
+  "INTERESRATE": "% Interest",
+  "ACCOUNTTYP": "Account type"
 }
