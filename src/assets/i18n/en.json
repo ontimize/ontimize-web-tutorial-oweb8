@@ -58,5 +58,10 @@
   "DATE_": "Date",
   "CONCEPT": "Concept",
   "MOVEMENT": "Movement",
-  "MOVEMENTTYPEID": "Movement type"
+  "MOVEMENTTYPEID": "Movement type",
+  "FILTERS_ACCOUNTS": "Account filters",
+  "INIT": "Init",
+  "END": "End",
+  "FILTER": "Filter",
+  "CLEAR": "Clear"
 }

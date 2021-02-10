@@ -59,5 +59,10 @@
   "DATE_": "Fecha",
   "CONCEPT": "Concepto",
   "MOVEMENT": "Movimiento",
-  "MOVEMENTTYPEID": "Tipo movimiento"
+  "MOVEMENTTYPEID": "Tipo movimiento",
+  "FILTERS_ACCOUNTS": "Filtros cuenta",
+  "INIT": "Inicio",
+  "END": "Fin",
+  "FILTER": "Filtrar",
+  "CLEAR": "Limpiar"
 }
