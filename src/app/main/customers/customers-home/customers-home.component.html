@@ -1,12 +1,15 @@
 <o-form-layout-manager title="{{'CUSTOMERS' | oTranslate }}" separator=" " mode="tab" label-columns="NAME;SURNAME">
   <div fxFlex>
-   <o-table fxFlex attr="customersTable" service="customers" entity="customer" keys="CUSTOMERID"
-     columns="CUSTOMERID;ID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL"
-     visible-columns="ID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL" query-rows="20">
-     <o-table-column attr="PHOTO" title="PHOTO" orderable="no" searchable="no" type="image" avatar="no"
-       empty-image="assets/images/no-image.png" image-type="base64"></o-table-column>
-     <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
-     <o-table-column attr="ID" title="ID" width="100px"></o-table-column>
-   </o-table>
+    <o-table fxFlex attr="customersTable" service="customers" entity="customer" keys="CUSTOMERID"
+      columns="CUSTOMERID;ID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL;CUSTOMERTYPEID"
+      visible-columns="ID;PHOTO;NAME;SURNAME;STARTDATE;EMAIL;CUSTOMERTYPEID" query-rows="20">
+      <o-table-column attr="CUSTOMERTYPEID" title="CUSTOMERTYPEID">
+        <app-customertype-column-renderer></app-customertype-column-renderer>
+      </o-table-column>
+      <o-table-column attr="PHOTO" title="PHOTO" orderable="no" searchable="no" type="image" avatar="no"
+        empty-image="assets/images/no-image.png" image-type="base64"></o-table-column>
+      <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+      <o-table-column attr="ID" title="ID" width="100px"></o-table-column>
+    </o-table>
   </div>
- </o-form-layout-manager>
+</o-form-layout-manager>

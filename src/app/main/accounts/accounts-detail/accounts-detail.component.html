@@ -13,18 +13,22 @@
   </o-row>
   <o-row>
     <o-table fxFlex="40" class="input-padding" attr="customersTable" service="customers" entity="vCustomerAccount"
-      parent-keys="ACCOUNTID" keys="ACCOUNTID" columns="ID;NAME;SURNAME" visible-columns="ID;NAME;SURNAME" query-rows="15"
+      parent-keys="ACCOUNTID" keys="ACCOUNTID" columns="ID;NAME;SURNAME;CUSTOMERTYPEID" visible-columns="ID;NAME;SURNAME;CUSTOMERTYPEID" query-rows="15"
       insert-button="yes" insert-form-route="addcustomer/new" detail-mode="none">
       <o-table-column attr="ID" title="ID" class="o-table-column-centered"></o-table-column>
       <o-table-column attr="NAME" title="NAME" class="o-table-column-centered"></o-table-column>
       <o-table-column attr="SURNAME" title="SURNAME" class="o-table-column-centered"></o-table-column>
+      <o-table-column attr="CUSTOMERTYPEID" title="CUSTOMERTYPEID" class="o-table-column-centered">
+        <app-customertype-column-renderer></app-customertype-column-renderer>
+      </o-table-column>
     </o-table>
     <o-table fxFlex="60" attr="movementsTable" service="movements" entity="movement" parent-keys="ACCOUNTID" keys="MOVEMENTID"
       columns="DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPEID" visible-columns="DATE_;CONCEPT;MOVEMENT;MOVEMENTTYPEID" query-rows="15"
       insert-form-route="addMovement/new"  detail-mode="none" insert-button="yes">
       <o-table-column attr="DATE_" title="DATE_" type="date" format="LL"></o-table-column>
-      <o-table-column attr="MOVEMENT" title="MOVEMENT" type="currency" currency-symbol="€" currency-symbol-position="right"
-        thousand-separator="." decimal-separator="," class="o-table-column-centered"></o-table-column>
+      <o-table-column attr="MOVEMENT" title="MOVEMENT" class="o-table-column-centered">
+        <app-movement-column-renderer></app-movement-column-renderer>
+      </o-table-column>
       <o-table-column attr="MOVEMENTTYPEID" title="MOVEMENTTYPEID">
         <o-table-cell-renderer-service service="movements" entity="movementType" columns="DESCRIPTION;MOVEMENTTYPEID"
            value-column="DESCRIPTION">
