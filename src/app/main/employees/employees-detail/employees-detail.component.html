@@ -1,33 +1,31 @@
-<o-form service="employees" entity="employee" keys="EMPLOYEEID" header-actions="R;U;D" show-header-navigation="yes">
-  <o-integer-input attr="EMPLOYEEID" sql-type="INTEGER" enabled="no"></o-integer-input>
-  <o-row>
-    <o-column>
-      <o-image attr="EMPLOYEEPHOTO" empty-image="assets/images/no-image.png" sql-type="OTHER"></o-image>
-    </o-column>
-    <o-column title-label="EMPLOYEE_PERSONAL_INFORMATION" fxFlex>
-      <o-row>
-        <o-text-input class="input-padding" attr="EMPLOYEENAME" required="yes" fxFlex="40"></o-text-input>
-        <o-text-input class="input-padding" attr="EMPLOYEESURNAME" required="yes" fxFlex="40"></o-text-input>
-        <o-date-input attr="EMPLOYEESTARTDATE" fxFlex="20"></o-date-input>
-      </o-row>
-      <o-row>
-        <o-text-input class="input-padding" attr="EMPLOYEEPHONE" fxFlex="40"></o-text-input>
-        <o-text-input class="input-padding" attr="EMPLOYEEEMAIL" fxFlex="40"></o-text-input>
-        <o-list-picker attr="EMPLOYEETYPEID" class="input-padding" fxFlex="20" service="employees"
-           entity="employeeType" keys="EMPLOYEETYPEID" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME"
-           visible-columns="EMPLOYEETYPENAME" value-column="EMPLOYEETYPEID"></o-list-picker>
-      </o-row>
-      <o-row>
-        <o-text-input class="input-padding" attr="EMPLOYEEADDRESS" fxFlex="65"></o-text-input>
-        <o-list-picker attr="OFFICEID" required="yes" class="input-padding" fxFlex="35" service="branches"
-           entity="branch" keys="OFFICEID" columns="OFFICEID;NAME"
-           visible-columns="NAME" value-column="OFFICEID"></o-list-picker>
-      </o-row>
-      <o-row>
-        <o-real-input attr="LONGITUDE" decimal-separator="," max-decimal-digits="10" min-decimal-digits="0" class="input-padding"
-          fxFlex="50"></o-real-input>
-        <o-real-input attr="LATITUDE" decimal-separator="," max-decimal-digits="10" min-decimal-digits="0" fxFlex="50"></o-real-input>
-      </o-row>
-    </o-column>
-  </o-row>
-</o-form>
+
+<div fxLayout="column" fxLayoutAlign="space-evenly stretch" class="employee-detail" fxFill>
+
+  <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="24px">
+    <div fxLayout="column" fxLayoutAlign="center center" fxFlex="40">
+      <div class="image">
+        <img [src]="getImageSrc(data.EMPLOYEEPHOTO)">
+      </div>
+      <span class="employee-name"><b>{{ data.EMPLOYEENAME }} {{ data.EMPLOYEESURNAME }}</b></span>
+      <mat-divider></mat-divider>
+      <span class="employee-type"><i>{{ data.EMPLOYEETYPENAME }}</i></span>
+      <mat-divider></mat-divider>
+    </div>
+    <div fxLayout="column" fxFlex="60" class="employee-data">
+      <span *ngIf="data.EMPLOYEEEMAIL">
+        <mat-icon>email</mat-icon>{{ data.EMPLOYEEEMAIL }}
+      </span>
+      <span *ngIf="data.EMPLOYEEPHONE">
+        <mat-icon>smartphone</mat-icon>{{ data.EMPLOYEEPHONE }}
+      </span>
+      <span *ngIf="data.EMPLOYEEADDRESS">
+        <mat-icon>home</mat-icon>{{ data.EMPLOYEEADDRESS }}
+      </span>
+    </div>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="end center">
+    <span class="employee-office">{{ data.NAME }}</span>
+  </div>
+
+</div>

@@ -1,14 +1,26 @@
-<o-form-layout-manager title="{{'EMPLOYEES' | oTranslate }}" separator=" " mode="dialog" label-columns="EMPLOYEENAME;EMPLOYEESURNAME">
-  <div fxFlex>
-   <o-table fxFlex attr="employeesTable" service="employees" entity="employee" keys="EMPLOYEEID"
-     columns="EMPLOYEEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEPHOTO;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;EMPLOYEETYPEID"
-     visible-columns="EMPLOYEEPHOTO;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEEMAIL;EMPLOYEEADDRESS;EMPLOYEESTARTDATE"
-     query-rows="15">
-     <o-table-column attr="EMPLOYEEPHOTO" title="EMPLOYEEPHOTO" orderable="no" searchable="no" type="image" avatar="no" empty-image="assets/images/no-image.png"
-       image-type="base64" width="150px"></o-table-column>
-     <o-table-column attr="EMPLOYEESTARTDATE" title="EMPLOYEESTARTDATE" type="date" format="LL"></o-table-column>
-     <o-table-column attr="EMPLOYEENAME" title="EMPLOYEENAME" width="150px"></o-table-column>
-     <o-table-column attr="EMPLOYEESURNAME" title="EMPLOYEESURNAME" width="150px"></o-table-column>
-   </o-table>
-  </div>
- </o-form-layout-manager>
+<!-- <div fxFlex>
+  <o-table fxFlex attr="employeesTable" service="employees" entity="employee" keys="EMPLOYEEID"
+    columns="EMPLOYEEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEPHOTO;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;EMPLOYEETYPEID"
+    visible-columns="EMPLOYEEPHOTO;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEEMAIL;EMPLOYEEADDRESS;EMPLOYEESTARTDATE"
+    query-rows="15">
+    <o-table-column attr="EMPLOYEEPHOTO" title="EMPLOYEEPHOTO" orderable="no" searchable="no" type="image" avatar="no"
+      empty-image="assets/images/no-image.png" image-type="base64" width="150px"></o-table-column>
+    <o-table-column attr="EMPLOYEESTARTDATE" title="EMPLOYEESTARTDATE" type="date" format="LL"></o-table-column>
+    <o-table-column attr="EMPLOYEENAME" title="EMPLOYEENAME" width="150px"></o-table-column>
+    <o-table-column attr="EMPLOYEESURNAME" title="EMPLOYEESURNAME" width="150px"></o-table-column>
+  </o-table>
+</div> -->
+
+<o-grid #employeesGrid attr="employeesGrid" service="employees" entity="employee" keys="EMPLOYEEID"
+  columns="EMPLOYEEID;EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEPHOTO;EMPLOYEEADDRESS;EMPLOYEESTARTDATE;EMPLOYEEEMAIL;OFFICEID;NAME;EMPLOYEETYPEID;EMPLOYEETYPENAME"
+  query-rows="8" show-page-size="true" page-size-options="4;8;16" orderable="true" quick-filter="true"
+  sortable-columns="EMPLOYEENAME;EMPLOYEESURNAME;EMPLOYEEEMAIL" controls="true" gutter-size="18px" detail-mode="none">
+  <o-grid-item *ngFor="let list of employeesGrid.dataArray">
+    <div (click)="openDetail(list)" fxLayout="column" fxLayoutAlign="space-evenly center" class="mat-elevation-z1">
+        <img [src]="getImageSrc(list.EMPLOYEEPHOTO)" width="144px" height="200px">
+        <span><b>{{ list.EMPLOYEENAME }} {{list.EMPLOYEESURNAME}}</b></span>
+        <span><i>{{ list.EMPLOYEETYPENAME }}</i></span>
+        <span>{{ list.NAME }}</span>
+    </div>
+  </o-grid-item>
+</o-grid>
