@@ -6,3 +6,28 @@
 .o-table-column-centered{
   text-align: center;
 }
+
+
+.home-card {
+  display: block !important;
+  height: 100%;
+  margin: auto;
+  overflow: hidden;
+  width: 100%;
+}
+
+.home-card-title {
+  color: #cccccc;
+  font-weight: bold;
+  margin: 0;
+  text-align: end
+}
+
+.home-card-home-amount {
+  color: #202020;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0 0 0 15px;
+  padding-top: 2px;
+  text-align: start;
+}

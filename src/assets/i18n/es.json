@@ -72,5 +72,17 @@
   "release_date": "Fecha Lanzamiento",
   "opening_crawl": "Texto inicio",
   "FILMS": "Películas",
-  "SERVICEEX": "Servicio Externo"
+  "SERVICEEX": "Servicio Externo",
+  "MODULES": "Módulos",
+  "ACCESS": "Ver",
+  "DOCUMENTATION": "Documentación",
+  "TOTAL_CUSTOMERS": "Clientes totales",
+  "TOTAL_EMPLOYEES": "Empleados totales",
+  "TOTAL_BRANCHES": "Sucursales totales",
+  "TOTAL_ACCOUNT": "Cuentas totales",
+  "TOTAL_SERVICEEX": "Elementos totales",
+  "VIP": "VIP",
+  "NORMAL": "Normal",
+  "OTHERS": "Otros",
+  "BASIC": "Básico"
 }

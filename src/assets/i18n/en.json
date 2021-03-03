@@ -71,5 +71,17 @@
   "release_date": "Release Date",
   "opening_crawl": "Opening",
   "FILMS": "Films",
-  "SERVICEEX": "External Service"
+  "SERVICEEX": "External Service",
+  "MODULES": "Modules",
+  "ACCESS": "View",
+  "DOCUMENTATION": "Documentation",
+  "TOTAL_CUSTOMERS": "Total customers",
+  "TOTAL_EMPLOYEES": "Total employees",
+  "TOTAL_BRANCHES": "Total branches",
+  "TOTAL_ACCOUNT": "Total accounts",
+  "TOTAL_SERVICEEX": "Total elements",
+  "VIP": "VIP",
+  "NORMAL": "Normal",
+  "OTHERS": "Others",
+  "BASIC": "Basic"
 }
