@@ -87,5 +87,6 @@
   "OTHERS": "Otros",
   "BASIC": "Básico",
   "ACCOUNT_GRAPHIC": "Gráficos",
-  "ACCOUNT_INFORMATION": "Detalle de cuentas"
+  "ACCOUNT_INFORMATION": "Detalle de cuentas",
+  "longTask": "Tarea larga"
 }

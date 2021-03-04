@@ -86,5 +86,6 @@
   "OTHERS": "Others",
   "BASIC": "Basic",
   "ACCOUNT_GRAPHIC": "Graphics",
-  "ACCOUNT_INFORMATION": "Account details"
+  "ACCOUNT_INFORMATION": "Account details",
+  "longTask": "Long task"
 }

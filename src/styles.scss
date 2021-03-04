@@ -31,3 +31,16 @@
   padding-top: 2px;
   text-align: start;
 }
+
+.waitPanel {
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #00000066;
+  z-index: 99;
+  justify-content: center;
+  align-items: center;
+}
