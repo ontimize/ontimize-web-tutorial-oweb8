@@ -1,6 +1,7 @@
-<o-form service="customers" entity="customer" keys="CUSTOMERID" header-actions="R;I;U;D" show-header-navigation="no">
+<o-form fxFill service="customers" entity="customer" keys="CUSTOMERID" header-actions="R;I;U;D"
+  show-header-navigation="no">
   <o-text-input attr="CUSTOMERID" sql-type="INTEGER" enabled="no"></o-text-input>
-  <o-row>
+  <o-row fxFlex>
     <o-column>
       <o-image id="CUSTOMER_PHOTO" attr="PHOTO" empty-image="assets/images/no-image.png" sql-type="OTHER"></o-image>
     </o-column>
@@ -26,9 +27,10 @@
             <o-text-input attr="ADDRESS" fxFlex></o-text-input>
           </o-row>
           <o-row>
-            <o-real-input attr="LONGITUDE" decimal-separator="," max-decimal-digits="10" min-decimal-digits="0" class="input-padding"
+            <o-real-input attr="LONGITUDE" decimal-separator="," max-decimal-digits="10" min-decimal-digits="0"
+              class="input-padding" fxFlex="50"></o-real-input>
+            <o-real-input attr="LATITUDE" decimal-separator="," max-decimal-digits="10" min-decimal-digits="0"
               fxFlex="50"></o-real-input>
-            <o-real-input attr="LATITUDE" decimal-separator="," max-decimal-digits="10" min-decimal-digits="0" fxFlex="50"></o-real-input>
           </o-row>
           <o-row>
             <o-textarea-input attr="COMMENTS" fxFlex></o-textarea-input>
@@ -36,21 +38,27 @@
         </o-column>
       </mat-tab>
       <mat-tab label="{{ 'ACCOUNTS' | oTranslate }}">
-          <o-table fxFlex attr="accountsTable" service="customers" entity="vCustomerAccount" keys="ACCOUNTID" insert-button="no"
-             refresh-button="no" detail-mode="none" delete-button="no" query-rows="20" parent-keys="CUSTOMERID"
-             columns="CUSTOMERID;ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
-             visible-columns="ACCOUNTNUMBER;STARTDATE;ENDDATE;INTERESRATE;INTERESRATE_MONTHLY;ACCOUNTTYP"  >
-          <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
-          <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
-          <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" width="150px" decimal-separator=","></o-table-column>
-          <o-table-column attr="ACCOUNTNUMBER" title="ACCOUNTNUMBER" class="o-table-column-centered">
-            <app-account-number-render></app-account-number-render>
-          </o-table-column>
-          <o-table-column-calculated attr="INTERESRATE_MONTHLY" title="INTERESRATE_MONTHLY"
-            [operation-function]="intRateMonthly" type="percentage"
-            decimal-separator="," class="o-table-column-centered">
-          </o-table-column-calculated>
-        </o-table>
+        <div fxFlex>
+          <o-table #accountCustomerTable attr="accountsTable" service="customers" entity="vCustomerAccount"
+            keys="ACCOUNTID" insert-button="no" refresh-button="no" detail-mode="none" delete-button="no"
+            query-rows="20" parent-keys="CUSTOMERID"
+            columns="CUSTOMERID;ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
+            visible-columns="ACCOUNTNUMBER;STARTDATE;ENDDATE;INTERESRATE;INTERESRATE_MONTHLY;ACCOUNTTYP">
+            <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+            <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
+            <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" width="150px"
+              decimal-separator=",">
+            </o-table-column>
+            <o-table-column attr="ACCOUNTNUMBER" title="ACCOUNTNUMBER" class="o-table-column-centered">
+              <app-account-number-render></app-account-number-render>
+            </o-table-column>
+            <o-table-column-calculated attr="INTERESRATE_MONTHLY" title="INTERESRATE_MONTHLY"
+              [operation-function]="intRateMonthly" type="percentage" decimal-separator=","
+              class="o-table-column-centered">
+            </o-table-column-calculated>
+          </o-table>
+        </div>
+        <o-button (click)="openAccountDetailSelected()" label="{{ 'OPEN_ACCOUNT_SELECTED' | oTranslate }}"></o-button>
       </mat-tab>
     </mat-tab-group>
   </o-row>

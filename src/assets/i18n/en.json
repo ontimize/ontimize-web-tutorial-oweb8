@@ -87,5 +87,6 @@
   "BASIC": "Basic",
   "ACCOUNT_GRAPHIC": "Graphics",
   "ACCOUNT_INFORMATION": "Account details",
-  "longTask": "Long task"
+  "longTask": "Long task",
+  "OPEN_ACCOUNT_SELECTED": "Open Account Selected"
 }

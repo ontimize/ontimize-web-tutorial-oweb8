@@ -88,5 +88,6 @@
   "BASIC": "Básico",
   "ACCOUNT_GRAPHIC": "Gráficos",
   "ACCOUNT_INFORMATION": "Detalle de cuentas",
-  "longTask": "Tarea larga"
+  "longTask": "Tarea larga",
+  "OPEN_ACCOUNT_SELECTED": "Abrir cuenta seleccionada"
 }
