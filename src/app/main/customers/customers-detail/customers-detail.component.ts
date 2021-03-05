@@ -24,8 +24,9 @@ export class CustomersDetailComponent implements OnInit {
   public openAccountDetailSelected() {
     let selected = this.accountTable.getSelectedItems();
     if (selected.length === 1) {
-      let accountId = selected[0]['ACCOUNTID']
-      this.router.navigate(['main/accounts/' + accountId]);
+      let accountId = selected[0]['ACCOUNTID'];
+      let customerId = selected[0]['CUSTOMERID'];
+      this.router.navigate(['main/customers/' + customerId + '/' + accountId], { queryParams: { isdetail: true } });
     }
   }
 

@@ -8,6 +8,7 @@ import { MENU_COMPONENTS } from './app.menu.config';
 import { starsWarsServiceFactory } from '../main/service-ex/service-ex.module';
 import { StarsWarsService } from './star-wars.service';
 import { OChartModule } from 'ontimize-web-ngx-charts';
+import { AccountsDetailComponent } from '../main/accounts/accounts-detail/accounts-detail.component';
 
 
 export function intRateMonthlyFunction (rowData: Array<any>): number {
@@ -23,7 +24,8 @@ export function intRateMonthlyFunction (rowData: Array<any>): number {
     AccountNumberRenderComponent,
     CustomertypeColumnRendererComponent,
     MovementColumnRendererComponent,
-    ...MENU_COMPONENTS
+    ...MENU_COMPONENTS,
+    AccountsDetailComponent
   ],
   exports: [
     CommonModule,
@@ -31,7 +33,8 @@ export function intRateMonthlyFunction (rowData: Array<any>): number {
     CustomertypeColumnRendererComponent,
     MovementColumnRendererComponent,
     ...MENU_COMPONENTS,
-    OChartModule
+    OChartModule,
+    AccountsDetailComponent
   ],
   entryComponents: [...MENU_COMPONENTS],
   providers: [{
