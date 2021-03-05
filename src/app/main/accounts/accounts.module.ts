@@ -8,7 +8,6 @@ import { AccountsDetailComponent } from './accounts-detail/accounts-detail.compo
 import { AccountsNewComponent } from './accounts-new/accounts-new.component';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { AddMovementComponent } from './add-movement/add-movement.component';
-import { OChartModule } from 'ontimize-web-ngx-charts';
 
 @NgModule({
   imports: [
@@ -16,7 +15,6 @@ import { OChartModule } from 'ontimize-web-ngx-charts';
     OntimizeWebModule,
     SharedModule,
     AccountsRoutingModule,
-    OChartModule
   ],
   declarations: [
     AccountsHomeComponent,

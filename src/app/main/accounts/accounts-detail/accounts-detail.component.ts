@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ChartSeries, PieChartConfiguration } from 'ontimize-web-ngx-charts';
+import { PieChartConfiguration } from 'ontimize-web-ngx-charts';
 import { D3LocaleService } from '../../../shared/d3-locale/d3Locale.service';
 
 @Component({

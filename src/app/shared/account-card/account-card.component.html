@@ -1,6 +1,11 @@
 <div fxLayout="column">
-  <div fxLayoutAlign="space-between center" >
+  <div fxLayoutAlign="space-between center">
     <p class="home-card-title" fxFlex>{{ 'TOTAL_ACCOUNT' | oTranslate }}</p>
     <p class="home-card-home-amount" fxFlex>{{ accountAmount }}</p>
   </div>
+  <div fxLayoutAlign="space-between center">
+    <p class="home-card-title" fxFlex>{{ 'ACCOUNTS_UNDER' | oTranslate }}</p>
+    <p class="home-card-home-amount" fxFlex>{{ criteriaValue }} €</p>
+  </div>
 </div>
+<o-chart type="discreteBar" x-label="Axis x" y-label="Axis Y" [data]="graphData" [chart-parameters]="chartParameters" fxFlex></o-chart>
