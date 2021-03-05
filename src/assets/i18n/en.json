@@ -83,5 +83,7 @@
   "VIP": "VIP",
   "NORMAL": "Normal",
   "OTHERS": "Others",
-  "BASIC": "Basic"
+  "BASIC": "Basic",
+  "ACCOUNT_GRAPHIC": "Graphics",
+  "ACCOUNT_INFORMATION": "Account details"
 }
