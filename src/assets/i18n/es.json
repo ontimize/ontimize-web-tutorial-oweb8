@@ -64,5 +64,13 @@
   "INIT": "Inicio",
   "END": "Fin",
   "FILTER": "Filtrar",
-  "CLEAR": "Limpiar"
+  "CLEAR": "Limpiar",
+  "title": "Título",
+  "director": "Director",
+  "episode_id": "Episodio",
+  "producer": "Productor",
+  "release_date": "Fecha Lanzamiento",
+  "opening_crawl": "Texto inicio",
+  "FILMS": "Películas",
+  "SERVICEEX": "Servicio Externo"
 }

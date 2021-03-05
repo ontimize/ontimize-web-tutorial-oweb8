@@ -1,0 +1,8 @@
+<o-form-layout-manager title="{{'FILMS' | oTranslate }}" separator=" " mode="tab" label-columns="title">
+  <div fxFlex>
+    <o-table fxFlex attr="films" service-type="starsWars" entity="films" keys="uuid"
+      columns="title;episode_id;director;uuid"
+      visible-columns="title;director;episode_id" query-rows="20">
+    </o-table>
+    </div>
+  </o-form-layout-manager>
