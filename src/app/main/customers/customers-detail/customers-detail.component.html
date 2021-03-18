@@ -40,8 +40,8 @@
       <mat-tab label="{{ 'ACCOUNTS' | oTranslate }}">
         <div fxFlex>
           <o-table #accountCustomerTable attr="accountsTable" service="customers" entity="vCustomerAccount"
-            keys="ACCOUNTID" insert-button="no" refresh-button="no" detail-mode="none" delete-button="no"
-            query-rows="20" parent-keys="CUSTOMERID"
+            select-all-checkbox="yes" keys="ACCOUNTID" insert-button="no" refresh-button="no" detail-mode="dblclick"
+            delete-button="no" query-rows="20" parent-keys="CUSTOMERID"
             columns="CUSTOMERID;ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
             visible-columns="ACCOUNTNUMBER;STARTDATE;ENDDATE;INTERESRATE;INTERESRATE_MONTHLY;ACCOUNTTYP">
             <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
