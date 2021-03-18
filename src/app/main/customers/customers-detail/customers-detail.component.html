@@ -1,5 +1,5 @@
 <o-form fxFill #form service="customers" entity="customer" keys="CUSTOMERID" header-actions="R;I;U;D"
-  show-header-navigation="no">
+  show-header-navigation="no" (onDataLoaded)="onFormDataLoaded($event)">
   <o-text-input attr="CUSTOMERID" sql-type="INTEGER" enabled="no"></o-text-input>
   <o-row fxFlex>
     <o-column>
@@ -39,26 +39,34 @@
       </mat-tab>
       <mat-tab label="{{ 'ACCOUNTS' | oTranslate }}">
         <div fxFlex>
-          <o-table #accountCustomerTable attr="accountsTable" service="customers" select-all-checkbox="yes" entity="vCustomerAccount" keys="ACCOUNTID" insert-button="no"
-          refresh-button="no" detail-mode="dblclick" delete-button="no" query-rows="20" parent-keys="CUSTOMERID"
-          columns="CUSTOMERID;ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
-          visible-columns="ACCOUNTNUMBER;STARTDATE;ENDDATE;INTERESRATE;INTERESRATE_MONTHLY;ACCOUNTTYP">
-          <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
-          <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
-          <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" width="150px" decimal-separator=",">
-          </o-table-column>
-          <o-table-column attr="ACCOUNTNUMBER" title="ACCOUNTNUMBER" class="o-table-column-centered">
-            <app-account-number-render></app-account-number-render>
-          </o-table-column>
-          <o-table-column-calculated attr="INTERESRATE_MONTHLY" title="INTERESRATE_MONTHLY"
-          [operation-function]="intRateMonthly" type="percentage" decimal-separator=","
-          class="o-table-column-centered">
-        </o-table-column-calculated>
-      </o-table>
-    </div>
-    <o-button (click)="openAccountDetailSelected()" label="Open Account Selected"></o-button>
-    <o-button (click)="createNewAccount()" label="Create new account"></o-button>
+          <o-table #accountCustomerTable attr="accountsTable" service="customers" select-all-checkbox="yes"
+            entity="vCustomerAccount" keys="ACCOUNTID" insert-button="no" refresh-button="no" detail-mode="dblclick"
+            delete-button="no" query-rows="20" parent-keys="CUSTOMERID"
+            columns="CUSTOMERID;ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
+            visible-columns="ACCOUNTNUMBER;STARTDATE;ENDDATE;INTERESRATE;INTERESRATE_MONTHLY;ACCOUNTTYP">
+            <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+            <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
+            <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" width="150px"
+              decimal-separator=",">
+            </o-table-column>
+            <o-table-column attr="ACCOUNTNUMBER" title="ACCOUNTNUMBER" class="o-table-column-centered">
+              <app-account-number-render></app-account-number-render>
+            </o-table-column>
+            <o-table-column-calculated attr="INTERESRATE_MONTHLY" title="INTERESRATE_MONTHLY"
+              [operation-function]="intRateMonthly" type="percentage" decimal-separator=","
+              class="o-table-column-centered">
+            </o-table-column-calculated>
+          </o-table>
+        </div>
+        <o-button (click)="openAccountDetailSelected()" label="Open Account Selected"></o-button>
+        <o-button (click)="createNewAccount()" label="Create new account"></o-button>
       </mat-tab>
     </mat-tab-group>
+    <div fxFlex="40" fxFlex.md="100" *ngIf="hasGPSPositition()">
+      <o-map class="o-map" [center]="getPositionGPS()" zoom="10" min-zoom="3" max-zoom="20" zoom-control="yes"
+        search-control="no" layer-panel-visible="no">
+        <o-map-layer layer-type="marker" layer-id="office_marker" [layer-center]="getPositionGPS()"></o-map-layer>
+      </o-map>
+    </div>
   </o-row>
 </o-form>
