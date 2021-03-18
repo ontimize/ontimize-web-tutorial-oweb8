@@ -1,0 +1,9 @@
+<div mat-dialog-content>
+  <o-form fxFill #form (onFormModeChange)="forceInsertMode($event)" (onInsert)="closeDialog($event)" service="branches"
+    entity="account" header-actions="I" show-header-navigation="no">
+    <o-combo attr="OFFICEID" label="OFFICEID" service="branches" entity="branch" value-column="OFFICEID"
+      columns="OFFICEID;NAME" visible-columns="NAME" read-only="no" required="yes"></o-combo>
+    <o-integer-input oHidden attr="CUSTOMERID"></o-integer-input>
+    <o-date-input attr="STARTDATE"></o-date-input>
+  </o-form>
+</div>

@@ -39,26 +39,25 @@
       </mat-tab>
       <mat-tab label="{{ 'ACCOUNTS' | oTranslate }}">
         <div fxFlex>
-          <o-table #accountCustomerTable attr="accountsTable" service="customers" entity="vCustomerAccount"
-            select-all-checkbox="yes" keys="ACCOUNTID" insert-button="no" refresh-button="no" detail-mode="dblclick"
-            delete-button="no" query-rows="20" parent-keys="CUSTOMERID"
-            columns="CUSTOMERID;ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
-            visible-columns="ACCOUNTNUMBER;STARTDATE;ENDDATE;INTERESRATE;INTERESRATE_MONTHLY;ACCOUNTTYP">
-            <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
-            <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
-            <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" width="150px"
-              decimal-separator=",">
-            </o-table-column>
-            <o-table-column attr="ACCOUNTNUMBER" title="ACCOUNTNUMBER" class="o-table-column-centered">
-              <app-account-number-render></app-account-number-render>
-            </o-table-column>
-            <o-table-column-calculated attr="INTERESRATE_MONTHLY" title="INTERESRATE_MONTHLY"
-              [operation-function]="intRateMonthly" type="percentage" decimal-separator=","
-              class="o-table-column-centered">
-            </o-table-column-calculated>
-          </o-table>
-        </div>
-        <o-button (click)="openAccountDetailSelected()" label="{{ 'OPEN_ACCOUNT_SELECTED' | oTranslate }}"></o-button>
+          <o-table #accountCustomerTable attr="accountsTable" service="customers" select-all-checkbox="yes" entity="vCustomerAccount" keys="ACCOUNTID" insert-button="no"
+          refresh-button="no" detail-mode="dblclick" delete-button="no" query-rows="20" parent-keys="CUSTOMERID"
+          columns="CUSTOMERID;ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID;STARTDATE;ENDDATE;INTERESRATE;ACCOUNTTYP"
+          visible-columns="ACCOUNTNUMBER;STARTDATE;ENDDATE;INTERESRATE;INTERESRATE_MONTHLY;ACCOUNTTYP">
+          <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+          <o-table-column attr="ENDDATE" title="ENDDATE" type="date" format="LL"></o-table-column>
+          <o-table-column attr="INTERESRATE" title="INTERESRATE" type="percentage" width="150px" decimal-separator=",">
+          </o-table-column>
+          <o-table-column attr="ACCOUNTNUMBER" title="ACCOUNTNUMBER" class="o-table-column-centered">
+            <app-account-number-render></app-account-number-render>
+          </o-table-column>
+          <o-table-column-calculated attr="INTERESRATE_MONTHLY" title="INTERESRATE_MONTHLY"
+          [operation-function]="intRateMonthly" type="percentage" decimal-separator=","
+          class="o-table-column-centered">
+        </o-table-column-calculated>
+      </o-table>
+    </div>
+    <o-button (click)="openAccountDetailSelected()" label="Open Account Selected"></o-button>
+    <o-button (click)="createNewAccount()" label="Create new account"></o-button>
       </mat-tab>
     </mat-tab-group>
   </o-row>
