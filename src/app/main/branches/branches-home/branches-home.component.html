@@ -1,0 +1,9 @@
+<o-form-layout-manager title="{{'BRANCHES' | oTranslate }}" separator=" " mode="dialog" label-columns="NAME">
+  <div fxFill>
+     <o-table fxFlex attr="branchesTable" service="branches" entity="branch" keys="OFFICEID"
+       columns="NAME;ADDRESS;STARTDATE;PHONE" visible-columns="NAME;ADDRESS;STARTDATE;PHONE"
+       query-rows="15">
+       <o-table-column attr="STARTDATE" title="STARTDATE" type="date" format="LL"></o-table-column>
+     </o-table>
+    </div>
+   </o-form-layout-manager>

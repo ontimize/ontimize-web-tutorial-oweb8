@@ -1,0 +1,33 @@
+<o-form service="employees" entity="employee" keys="EMPLOYEEID" header-actions="R;U;D" show-header-navigation="yes">
+  <o-integer-input attr="EMPLOYEEID" sql-type="INTEGER" enabled="no"></o-integer-input>
+  <o-row>
+    <o-column>
+      <o-image attr="EMPLOYEEPHOTO" empty-image="assets/images/no-image.png" sql-type="OTHER"></o-image>
+    </o-column>
+    <o-column title-label="EMPLOYEE_PERSONAL_INFORMATION" fxFlex>
+      <o-row>
+        <o-text-input class="input-padding" attr="EMPLOYEENAME" required="yes" fxFlex="40"></o-text-input>
+        <o-text-input class="input-padding" attr="EMPLOYEESURNAME" required="yes" fxFlex="40"></o-text-input>
+        <o-date-input attr="EMPLOYEESTARTDATE" fxFlex="20"></o-date-input>
+      </o-row>
+      <o-row>
+        <o-text-input class="input-padding" attr="EMPLOYEEPHONE" fxFlex="40"></o-text-input>
+        <o-text-input class="input-padding" attr="EMPLOYEEEMAIL" fxFlex="40"></o-text-input>
+        <o-list-picker attr="EMPLOYEETYPEID" class="input-padding" fxFlex="20" service="employees"
+           entity="employeeType" keys="EMPLOYEETYPEID" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME"
+           visible-columns="EMPLOYEETYPENAME" value-column="EMPLOYEETYPEID"></o-list-picker>
+      </o-row>
+      <o-row>
+        <o-text-input class="input-padding" attr="EMPLOYEEADDRESS" fxFlex="65"></o-text-input>
+        <o-combo attr="OFFICEID" required="yes" class="input-padding" fxFlex="35" service="branches"
+           entity="branch" keys="OFFICEID" columns="OFFICEID;NAME"
+           visible-columns="NAME" value-column="OFFICEID"></o-combo>
+      </o-row>
+      <o-row>
+        <o-real-input attr="LONGITUDE" decimal-separator="," max-decimal-digits="10" min-decimal-digits="0" class="input-padding"
+          fxFlex="50"></o-real-input>
+        <o-real-input attr="LATITUDE" decimal-separator="," max-decimal-digits="10" min-decimal-digits="0" fxFlex="50"></o-real-input>
+      </o-row>
+    </o-column>
+  </o-row>
+</o-form>
