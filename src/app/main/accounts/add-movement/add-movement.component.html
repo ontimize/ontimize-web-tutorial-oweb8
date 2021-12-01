@@ -1,0 +1,16 @@
+<o-form service="movements" query-on-init="no" entity="movement" keys="MOVEMENTID">
+  <o-list-picker attr="ACCOUNTID" service="branches" entity="account" parent-keys="ACCOUNTID" value-column="ACCOUNTID"
+     columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID" visible-columns="ENTITYID;OFFICEID;CDID;ANID" separator=" "
+     required="yes" read-only="yes"></o-list-picker>
+  <o-row>
+      <o-currency-input attr="MOVEMENT" currency-symbol="EUR" max-decimal-digits="2" fxFlex="30"
+         required="yes" class="input-padding"></o-currency-input>
+      <o-text-input attr="CONCEPT" fxFlex="70" required="yes"></o-text-input>
+  </o-row>
+  <o-row>
+  <o-date-input attr="DATE_" fxFlex="30" class="input-padding" required="yes"></o-date-input>
+  <o-combo attr="MOVEMENTTYPEID" service="movements" entity="movementType" value-column="MOVEMENTTYPEID"
+     columns="MOVEMENTTYPEID;DESCRIPTION" visible-columns="DESCRIPTION" separator=" "
+     required="yes" fxFlex="70"></o-combo>
+  </o-row>
+</o-form>

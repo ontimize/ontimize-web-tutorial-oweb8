@@ -1,0 +1,13 @@
+<o-form service="branches" entity="branch" keys="OFFICEID">
+  <o-column title="{{ 'BRANCH_INFORMATION' | oTranslate }}">
+    <o-row>
+      <o-text-input class="input-padding" attr="OFFICEID" sql-type="STRING" enabled="yes" fxFlex="15" required="yes"></o-text-input>
+      <o-text-input attr="NAME" fxFlex="85" required="yes"></o-text-input>
+    </o-row>
+    <o-row>
+      <o-text-input attr="PHONE" class="input-padding" step="0" grouping="no" fxFlex="15"></o-text-input>
+      <o-date-input attr="STARTDATE" class="input-padding" fxFlex="15"></o-date-input>
+      <o-text-input attr="ADDRESS" fxFlex="70"></o-text-input>
+    </o-row>
+  </o-column>
+</o-form>

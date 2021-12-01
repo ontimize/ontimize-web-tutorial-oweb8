@@ -1,0 +1,21 @@
+<o-form service="branches" entity="branch" keys="OFFICEID" header-actions="R;U;D" show-header-navigation="no">
+  <o-column title="{{ 'BRANCH_INFORMATION' | oTranslate }}">
+    <o-row>
+      <o-text-input class="input-padding" attr="OFFICEID" sql-type="STRING" enabled="no" fxFlex="15" required="yes"></o-text-input>
+      <o-text-input attr="NAME" fxFlex="85" required="yes"></o-text-input>
+    </o-row>
+    <o-row>
+      <o-text-input attr="PHONE" class="input-padding" step="0" grouping="no" fxFlex="15"></o-text-input>
+      <o-date-input attr="STARTDATE" class="input-padding" fxFlex="15"></o-date-input>
+      <o-text-input attr="ADDRESS" fxFlex="70"></o-text-input>
+    </o-row>
+  </o-column>
+  <o-column title="{{ 'CUSTOMERS_INFORMATION' | oTranslate }}">
+    <o-table fxFlex service="customers" entity="vCustomerAccount" parent-keys="OFFICEID" columns="ID;NAME;SURNAME"
+      visible-columns="ID;NAME;SURNAME" insert-button="no" query-rows="8">
+      <o-table-column attr="ID" title="ID" class="o-table-column-centered"></o-table-column>
+      <o-table-column attr="NAME" title="NAME" class="o-table-column-centered"></o-table-column>
+      <o-table-column attr="SURNAME" title="SURNAME" class="o-table-column-centered"></o-table-column>
+    </o-table>
+  </o-column>
+</o-form>

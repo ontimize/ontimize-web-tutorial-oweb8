@@ -1,0 +1,9 @@
+<o-form service="customers" query-on-init="no" entity="customerAccount" keys="CUSTOMERACCOUNTID">
+  <o-list-picker attr="CUSTOMERID" service="customers" entity="customer" value-column="CUSTOMERID" columns="CUSTOMERID;NAME;SURNAME"
+     visible-columns="NAME;SURNAME" separator=" " required="yes">
+  </o-list-picker>
+  <o-list-picker attr="ACCOUNTID" service="branches" entity="account" parent-keys="ACCOUNTID" value-column="ACCOUNTID"
+     columns="ACCOUNTID;ENTITYID;OFFICEID;CDID;ANID" visible-columns="ENTITYID;OFFICEID;CDID;ANID" separator=" "
+     required="yes" read-only="yes">
+  </o-list-picker>
+</o-form>

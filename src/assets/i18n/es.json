@@ -57,6 +57,13 @@
   "INTERESRATE": "% interés",
   "ACCOUNTTYP": "Tipo de cuenta",
   "ACCOUNTNUMBER": "Nº cuenta",
-  "INTERESRATE_MONTHLY": "% interés mensual"
+  "INTERESRATE_MONTHLY": "% interés mensual",
+  "BRANCH_INFORMATION":"Información de la sucursal",
+  "CUSTOMERS_INFORMATION":"Clientes de la sucursal",
+  "BALANCE":"Balance",
+  "DATE_": "Fecha",
+  "CONCEPT": "Concepto",
+  "MOVEMENT": "Movimiento",
+  "MOVEMENTTYPEID": "Tipo movimiento"
 
 }
